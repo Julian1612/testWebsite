@@ -16,7 +16,7 @@
         document.getElementById("uniqueNumber").textContent = uniqueNumber;
 
         // Use a third-party service to get the user's public IP address
-        fetch('https://ipinfo.io?token=YOUR_ACCESS_TOKEN')
+        fetch('https://ipinfo.io?token=5cef9fc3792484')
             .then(response => response.json())
             .then(data => {
                 document.getElementById("ipAddress").textContent = data.ip;
