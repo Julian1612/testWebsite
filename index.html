@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unique Number Generator</title>
+</head>
+<body>
+    <h1>Welcome to the Unique Number Generator!</h1>
+    <p>Your unique number is: <span id="uniqueNumber"></span></p>
+    <p>Your IP address is: <span id="ipAddress"></span></p>
+
+    <script>
+        // Generate a random number for each user
+        var uniqueNumber = Math.floor(Math.random() * 1000);
+
+        // Display the unique number on the page
+        document.getElementById("uniqueNumber").textContent = uniqueNumber;
+
+        // Use a third-party service to get the user's public IP address
+        fetch('https://ipinfo.io?token=YOUR_ACCESS_TOKEN')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("ipAddress").textContent = data.ip;
+            });
+    </script>
+</body>
+</html>
